@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Fileo Logo</title>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Background" fill="#000000" cx="100" cy="100" r="100"></circle>
+        <g id="Icon" transform="translate(40.000000, 40.000000)" fill="#FFFFFF">
+            <path d="M120,30 C120,13.4314575 106.568542,0 90,0 L30,0 C13.4314575,0 0,13.4314575 0,30 L0,90 C0,106.568542 13.4314575,120 30,120 L90,120 C106.568542,120 120,106.568542 120,90 L120,30 Z M90,10 C101.045695,10 110,18.954305 110,30 L110,90 C110,101.045695 101.045695,110 90,110 L30,110 C18.954305,110 10,101.045695 10,90 L10,30 C10,18.954305 18.954305,10 30,10 L90,10 Z" id="Folder" fill-rule="nonzero"></path>
+            <path d="M80,40 L40,40 C37.790861,40 36,41.790861 36,44 L36,84 C36,86.209139 37.790861,88 40,88 L80,88 C82.209139,88 84,86.209139 84,84 L84,44 C84,41.790861 82.209139,40 80,40 Z M76,48 L76,80 L44,80 L44,48 L76,48 Z" id="Document" fill-rule="nonzero"></path>
+            <rect id="Line-1" x="52" y="60" width="16" height="4" rx="2"></rect>
+            <rect id="Line-2" x="52" y="68" width="16" height="4" rx="2"></rect>
+        </g>
+    </g>
+</svg>

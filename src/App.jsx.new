@@ -1,0 +1,97 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+
+// Pages
+import Landing from './pages/Landing';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import Dashboard from './pages/Dashboard';
+import Upload from './pages/Upload';
+import FileDetails from './pages/FileDetails';
+import Settings from './pages/Settings';
+import NotFound from './pages/NotFound';
+import Trash from './pages/Trash';
+import Starred from './pages/Starred';
+import Sharing from './pages/Sharing';
+
+// Components
+import PrivateRoute from './components/auth/PrivateRoute';
+import PublicRoute from './components/auth/PublicRoute';
+import Navbar from './components/layout/Navbar';
+
+// Contexts
+import { AuthProvider } from './contexts/AuthContext';
+import { SupabaseProvider } from './contexts/SupabaseContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Toast from './components/ui/Toast';
+
+function App() {
+  return (
+    <SupabaseProvider>
+      <AuthProvider>
+        <ThemeProvider>
+          <Router>
+            <div className="min-h-screen bg-[#0D0D0D] text-[#F5F5F5]">
+              <Navbar />
+              <div className="pt-16"> {/* This adds padding for the fixed navbar */}
+                <Routes>
+                  <Route path="/" element={<Landing />} />
+                  <Route path="/login" element={
+                    <PublicRoute>
+                      <Login />
+                    </PublicRoute>
+                  } />
+                  <Route path="/signup" element={
+                    <PublicRoute>
+                      <Signup />
+                    </PublicRoute>
+                  } />
+                  <Route path="/dashboard" element={
+                    <PrivateRoute>
+                      <Dashboard />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/upload" element={
+                    <PrivateRoute>
+                      <Upload />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/file/:id" element={
+                    <PrivateRoute>
+                      <FileDetails />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/settings" element={
+                    <PrivateRoute>
+                      <Settings />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/trash" element={
+                    <PrivateRoute>
+                      <Trash />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/starred" element={
+                    <PrivateRoute>
+                      <Starred />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/sharing" element={
+                    <PrivateRoute>
+                      <Sharing />
+                    </PrivateRoute>
+                  } />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+              <Toaster position="top-right" />
+              <Toast />
+            </div>
+          </Router>
+        </ThemeProvider>
+      </AuthProvider>
+    </SupabaseProvider>
+  );
+}
+
+export default App;

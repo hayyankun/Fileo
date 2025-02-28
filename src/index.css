@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400,300&display=swap');
+
+/* Base Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Custom utilities */
+@layer components {
+  .btn {
+    @apply px-5 py-3 rounded-xl font-medium transition-all duration-200 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-black shadow-md hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-600 hover:bg-gray-800 text-gray-300;
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 bg-[#1A1A1A] border border-[#333333] rounded-xl text-[#F5F5F5] placeholder-[#6C6C6C] 
+           focus:outline-none focus:ring-2 focus:ring-[#0084FF] focus:border-transparent
+           shadow-soft transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-[#1A1A1A] rounded-2xl shadow-xl p-6 transition-all duration-200 hover:shadow-2xl;
+  }
+  
+  .shadow-soft {
+    @apply shadow-[0_8px_15px_rgba(0,0,0,0.1)];
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 bg-[#1A1A1A] border border-gray-700 rounded-xl text-[#F5F5F5] placeholder-[#6C6C6C]
+           focus:outline-none focus:ring-2 focus:ring-[#0084FF] focus:border-transparent
+           shadow-soft transition-all duration-200;
+  }
+
+  .sort-dropdown {
+    @apply px-4 py-2.5 bg-[#1A1A1A] border border-gray-700 rounded-xl text-[#F5F5F5] font-medium
+           focus:outline-none focus:ring-2 focus:ring-[#0084FF] shadow-soft transition-all duration-200;
+  }
+}
+
+/* Dark mode by default */
+:root {
+  --background: #0D0D0D;
+  --text: #F5F5F5;
+  --primary: #000000;
+  --secondary: #FFFFFF;
+  --accent: #6C6C6C;
+  --color-background: #121212;
+  --color-surface: #1e1e1e;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --color-primary: #0084FF;
+  --color-accent: #00FF99;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #2563eb;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0D0D0D] text-[#F5F5F5] font-satoshi antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-satoshi font-medium;
+  }
+  
+  p {
+    @apply text-[#E5E5E5] leading-relaxed;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  .btn {
+    @apply px-4 py-2.5 text-sm;
+  }
+  
+  .input {
+    @apply px-3.5 py-2.5 text-sm;
+  }
+  
+  h1 {
+    @apply text-xl;
+  }
+  
+  h2 {
+    @apply text-lg;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sidebar specific styles */
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-4 mb-1 rounded-lg transition-colors;
+}
+
+.sidebar-link-active {
+  @apply bg-[#333333] text-white font-medium;
+}
+
+.sidebar-link-inactive {
+  @apply text-gray-400 hover:bg-[#333333] hover:text-white;
+}
