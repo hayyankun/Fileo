@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Fileo - A Minimalist File Sharing App
 
 Fileo is a clean, minimalist file sharing web application designed with a focus on user experience. The app features a premium black-and-white aesthetic with rounded corners, smooth UI animations, and a mobile-first approach.
@@ -184,3 +185,6 @@ MIT
 Your Name - your.email@example.com
 
 Project Link: [https://github.com/yourusername/fileo](https://github.com/yourusername/fileo)
+=======
+# Fileo
+>>>>>>> a4b86dcd1932057e72a0541cd06c8f78c8f77067
